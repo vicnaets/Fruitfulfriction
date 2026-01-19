@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePager</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(0, 0, 0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            border-radius: 9px;
+            color: white;
+        }
+        button:hover {
+            transform: translateX(20px);
+        }
+        .error-btn:hover {
+            transform: translateY(-20px);
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .word {
+            opacity: 0;
+            animation: reveal 0s forwards;
+            animation-delay: calc(attr(data-delay) * 1s + 8s);
+        }
+        .word::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 7s linear infinite;
+            animation-delay: calc(attr(data-delay) * 1s);
+            margin-right: 5px;
+        }
+        @keyframes reveal {
+            to { opacity: 1; }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-letter {
+            display: inline-block;
+            animation: spinLetter 17s linear infinite;
+            animation-delay: calc(attr(data-delay) * 1s);
+        }
+        @keyframes spinLetter {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <video src="videos /slowslow3.mp4" autoplay loop style="width: 100vw; color: rgb(255, 255, 255); margin-left: calc(-50vw + 50%); margin-right: -20px; margin-top: -20px; margin-bottom: 0px;"></video>
+    <p style="max-width: 600px; text-align: center; margin: 20px auto; color: rgb(255, 255, 255); font-size: 14px; line-height: 1.5;">
+        Slowness
+       Mindful designing makes things slower and that is okay! The fastest response might not be the best one to design for. Instant gratification is what digital technology currently optimizes for. This results in the loss of desire, and boredom. Avoiding boredom makes us pick up our phone or open a website as soon as we have nothing to do and have to deal with a sense of existential unease. But being bored is crucial to start new fascinations and grow our sense of self-awareness. Boredom gets us into creative flow and  allows us to step into the present and connect to the world around us. Designing against speed is fuelling longing and desire; it allows boredom and elevates us to a richer life. </p>
+       <p style="max-width: 600px; text-align: center; margin: 20px auto; color: rgb(255, 255, 255); font-size: 14px; line-height: 1.5;"></p>        
+    Manifest<br>
+        1. Introduction<br>
+        2. Loss of predictability<br>
+        3. Slowness<br>
+        4. Non positive<br>
+        5. Loss of disturbance<br><br>
+        Calculate and choose for the part you want to read. (Beware, only the numbers between 1 and 5 lead to a part of the proposal.)
+         </p>
+    <div class="row">
+        <button class="error-btn" onclick="window.location.href='error.html'">14 or 1</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">16 or 1</button>
+        <button onclick="window.location.href='alinea3.html'">3 or 11</button>
+        <button onclick="window.location.href='alinea4.html'">4 or 9</button>
+    </div>
+    <div class="row">
+        <button class="error-btn" onclick="window.location.href='error.html'">67</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">10 or 2</button>
+        <button onclick="window.location.href='alinea2.html'">5 or 2</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">7</button>
+    </div>
+    <div class="row">
+        <button class="error-btn" onclick="window.location.href='error.html'">5</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">7 or 9</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">8</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">9 or 4</button>
+    </div>
+    <div class="row">
+        <button class="error-btn" onclick="window.location.href='error.html'">5 or 2</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">78 or 1</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">13 or 3</button>
+        <button onclick="window.location.href='index.html'">6 or 1</button>
+    </div>
+    <script>
+        const p = document.querySelector('p');
+        const text = p.textContent;
+        p.innerHTML = '';
+        const parts = text.split('.');
+        let delayIndex = 0;
+        parts.forEach((part, index) => {
+            if (index === 0 || index === parts.length - 1) {
+                const letters = part.split('');
+                letters.forEach((letter) => {
+                    const span = document.createElement('span');
+                    if (letter !== ' ' && letter !== '\n') {
+                        span.className = 'spin-letter';
+                        span.setAttribute('data-delay', delayIndex * 0.02);
+                        delayIndex++;
+                    }
+                    span.textContent = letter;
+                    p.appendChild(span);
+                });
+            } else {
+                p.appendChild(document.createTextNode(part));
+            }
+            if (index < parts.length - 1) {
+                p.appendChild(document.createTextNode('.'));
+            }
+        });
+        p.innerHTML = p.innerHTML.replace(/\n/g, '<br><br>');
+    </script>
+</body>
+</html>
