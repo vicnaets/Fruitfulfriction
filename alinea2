@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePager</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(0, 0, 0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            border-radius: 9px;
+            color: white;
+            animation: circle 1.5s ease-in-out infinite;
+        }
+        button:nth-child(1) { animation-delay: 0s; }
+        button:nth-child(2) { animation-delay: 0.75s; }
+        button:nth-child(3) { animation-delay: 1.5s; }
+        button:nth-child(4) { animation-delay: 2.25s; }
+        button:nth-child(5) { animation-delay: 3s; }
+        button:nth-child(6) { animation-delay: 3.75s; }
+        button:nth-child(7) { animation-delay: 4.5s; }
+        button:nth-child(8) { animation-delay: 5.25s; }
+        @keyframes circle {
+            0% { transform: translateX(0px) translateY(0px); }
+            12.5% { transform: translateX(15px) translateY(-10px); }
+            25% { transform: translateX(20px) translateY(0px); }
+            37.5% { transform: translateX(15px) translateY(10px); }
+            50% { transform: translateX(0px) translateY(20px); }
+            62.5% { transform: translateX(-15px) translateY(10px); }
+            75% { transform: translateX(-20px) translateY(0px); }
+            87.5% { transform: translateX(-15px) translateY(-10px); }
+            100% { transform: translateX(0px) translateY(0px); }
+        }
+        .fade-word {
+            animation: fade 7s infinite;
+            animation-delay: calc(attr(data-delay) * 3s);
+        }
+        @keyframes fade {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        button:hover {
+            transform: translateX(20px);
+        }
+        .error-btn:hover {
+            transform: translateY(-20px);
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <video src="videos /lossofpred.mp4" autoplay loop style="width: 100vw; color: rgb(255, 255, 255); margin-left: calc(-50vw + 50%); margin-right: -20px; margin-top: -20px; margin-bottom: 0px;"></video>
+     <p style="max-width: 600px; text-align: center; margin: 20px auto; color: rgb(255, 255, 255); font-size: 14px; line-height: 1.5;">
+       2. Loss of predictability 
+    </p>
+    <p style="max-width: 600px; text-align: center; margin: 20px auto; color: rgb(255, 255, 255); font-size: 14px; line-height: 1.5;">
+        In this new social media reality, where everything seems to have become ​​so confining and so ines­capably personal, data and attention-span become the most valuable product. In creating convenience, all our actions and thoughts become  predictable and commodifiable. Unpredictability, complexity,  human messiness and unforeseen actions all become a form of resistance against this goal. 
+    </p>
+    <p style="max-width: 600px; text-align: center; margin: 20px auto; color: rgb(255, 255, 255); font-size: 14px; line-height: 1.5;"></p>        
+    Manifest<br>
+        1. Introduction<br>
+        2. Loss of predictability<br>
+        3. Slowness<br>
+        4. Non positive<br>
+        5. Loss of disturbance<br><br>
+        Calculate and choose for the part you want to read. (Beware, only the numbers between 1 and 5 lead to a part of the proposal.)
+         </p>
+    <div class="row">
+        <button onclick="window.location.href='index.html'">1</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">16</button>
+        <button onclick="window.location.href='alinea3.html'">3</button>
+        <button onclick="window.location.href='alinea4.html'">4</button>
+    </div>
+    <div class="row">
+        <button class="error-btn" onclick="window.location.href='error.html'">67</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">10</button>
+        <button onclick="window.location.href='alinea2.html'">2</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">7</button>
+    </div>
+    <script>
+        const p = document.querySelector('p');
+        const text = p.textContent;
+        p.innerHTML = '';
+        const words = text.split(' ');
+        words.forEach((word, index) => {
+            const span = document.createElement('span');
+            span.className = 'fade-word';
+            span.textContent = word + ' ';
+            span.setAttribute('data-delay', index * 0.1);
+            p.appendChild(span);
+        });
+    </script>
+</body>
+</html>
