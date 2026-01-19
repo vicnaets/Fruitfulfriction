@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnePager</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(0, 0, 0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 10px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            border-radius: 9px;
+            color: white;
+        }
+        button:hover {
+            transform: translateX(10px);
+        }
+        .error-btn:hover {
+            transform: translateY(-10px);
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        @keyframes pixelateWave {
+            0% { -webkit-font-smoothing: antialiased; font-size: 14px; }
+            50% { -webkit-font-smoothing: none; font-size: 14.6px; }
+            100% { -webkit-font-smoothing: antialiased; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <video src="videos /disturbance1.mp4" autoplay loop style="width: 100vw; color: rgb(255, 255, 255); margin-left: calc(-50vw + 50%); margin-right: -20px; margin-top: -20px; margin-bottom: 0px;"></video>
+    <p style="max-width: 600px; text-align: center; margin: 20px auto; color: rgb(255, 255, 255); font-size: 14px; line-height: 1.5; animation: pixelateWave 2s infinite;">
+        LOSS OF DISTURBANCE<br>
+        Digital design has long pursued the goal of offering an escape from our real life experiences of internal friction, striving for seamlessness. While eliminating discomfort and moving towards a more sophisticated culture it erased the obstacles that demand for creativity and complexity of thought. Digital technology promotes a Fata Morgana where its users could remain in a constant sense of calm that would leave one perfectly untouched, protected from trouble — yet, simultaneously disconnected from what life has to offer.<br><br>
+        Manifest<br>
+        1. Introduction<br>
+        2. Loss of predictability<br>
+        3. Slowness<br>
+        4. Non positive<br>
+        5. Loss of disturbance<br><br>
+        Calculate and choose for the part you want to read. (Beware, only the numbers between 1 and 5 lead to a part of the proposal.)
+    </p>
+    <div class="row">
+        <button onclick="window.location.href='alinea1.html'">126-125+4</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">8+8+0</button>
+        <button onclick="window.location.href='alinea3.html'">(x^3)/9 -1</button>
+        <button onclick="window.location.href='alinea4.html'">(x+12)*2 = 32</button>
+    </div>
+    <div class="row">
+        <button class="error-btn" onclick="window.location.href='error.html'">67</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">7+(1*3)</button>
+        <button onclick="window.location.href='alinea2.html'">5+9-(5 * 2)</button>
+        <button class="error-btn" onclick="window.location.href='error.html'">5+3-1</button>
+    </div>
+</body>
+</html>
